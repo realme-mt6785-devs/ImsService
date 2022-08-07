@@ -12,6 +12,8 @@
 
 
 # instance fields
+.field private mContext:Landroid/content/Context;
+
 .field private mImsService:Lcom/mediatek/ims/ImsService;
 
 
@@ -38,7 +40,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "imsService"    # Lcom/mediatek/ims/ImsService;
 
-    .line 76
+    .line 77
     invoke-direct {p0}, Lcom/mediatek/ims/internal/IMtkImsService$Stub;-><init>()V
 
     .line 74
@@ -46,15 +48,18 @@
 
     iput-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
-    .line 77
+    .line 78
     iput-object p2, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
-    .line 78
+    .line 79
+    iput-object p1, p0, Lcom/mediatek/ims/MtkImsService;->mContext:Landroid/content/Context;
+
+    .line 80
     const-string v0, "init"
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/MtkImsService;->log(Ljava/lang/String;)V
 
-    .line 79
+    .line 81
     return-void
 .end method
 
@@ -62,15 +67,15 @@
     .locals 1
     .param p1, "s"    # Ljava/lang/String;
 
-    .line 205
+    .line 207
     sget-boolean v0, Lcom/mediatek/ims/MtkImsService;->ENGLOAD:Z
 
     if-eqz v0, :cond_0
 
-    .line 206
+    .line 208
     invoke-direct {p0, p1}, Lcom/mediatek/ims/MtkImsService;->log(Ljava/lang/String;)V
 
-    .line 208
+    .line 210
     :cond_0
     return-void
 .end method
@@ -79,12 +84,12 @@
     .locals 1
     .param p1, "s"    # Ljava/lang/String;
 
-    .line 200
+    .line 202
     const-string v0, "MtkImsService"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 202
+    .line 204
     return-void
 .end method
 
@@ -92,12 +97,12 @@
     .locals 1
     .param p1, "s"    # Ljava/lang/String;
 
-    .line 215
+    .line 217
     const-string v0, "MtkImsService"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 216
+    .line 218
     return-void
 .end method
 
@@ -105,12 +110,12 @@
     .locals 1
     .param p1, "s"    # Ljava/lang/String;
 
-    .line 211
+    .line 213
     const-string v0, "MtkImsService"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
+    .line 214
     return-void
 .end method
 
@@ -120,12 +125,12 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 100
+    .line 102
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->onUpdateImsSate(I)V
 
-    .line 101
+    .line 103
     return-void
 .end method
 
@@ -134,12 +139,12 @@
     .param p1, "phoneId"    # I
     .param p2, "listener"    # Landroid/telephony/ims/aidl/IImsSmsListener;
 
-    .line 221
+    .line 223
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1, p2}, Lcom/mediatek/ims/ImsService;->onAddImsSmsListener(ILandroid/telephony/ims/aidl/IImsSmsListener;)V
 
-    .line 222
+    .line 224
     return-void
 .end method
 
@@ -148,12 +153,12 @@
     .param p1, "phoneId"    # I
     .param p2, "request"    # Landroid/telephony/ims/feature/CapabilityChangeRequest;
 
-    .line 253
+    .line 258
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1, p2}, Lcom/mediatek/ims/ImsService;->changeEnabledCapabilities(ILandroid/telephony/ims/feature/CapabilityChangeRequest;)V
 
-    .line 254
+    .line 259
     return-void
 .end method
 
@@ -164,7 +169,7 @@
     .param p3, "listener"    # Landroid/telephony/ims/aidl/IImsCallSessionListener;
     .param p4, "aospCallSessionImpl"    # Lcom/android/ims/internal/IImsCallSession;
 
-    .line 159
+    .line 161
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/mediatek/ims/ImsService;->onCreateMtkCallSession(ILandroid/telephony/ims/ImsCallProfile;Landroid/telephony/ims/aidl/IImsCallSessionListener;Lcom/android/ims/internal/IImsCallSession;)Lcom/mediatek/ims/internal/IMtkImsCallSession;
@@ -178,12 +183,12 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 136
+    .line 138
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->deregisterIms(I)V
 
-    .line 137
+    .line 139
     return-void
 .end method
 
@@ -191,12 +196,12 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 244
+    .line 249
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->fallBackAospMTFlow(I)V
 
-    .line 245
+    .line 250
     return-void
 .end method
 
@@ -204,12 +209,12 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 150
+    .line 152
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/ImsService;->bindAndRegisterWifiOffloadService()V
 
-    .line 152
+    .line 154
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/ImsService;->getImsConfigManager()Lcom/mediatek/ims/ImsConfigManager;
@@ -227,7 +232,7 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 186
+    .line 188
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->getCurrentCallCount(I)I
@@ -241,7 +246,7 @@
     .locals 1
     .param p1, "capability"    # I
 
-    .line 191
+    .line 193
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->getImsNetworkState(I)[I
@@ -255,7 +260,7 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 118
+    .line 120
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->getImsRegUriType(I)I
@@ -269,7 +274,7 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 109
+    .line 111
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->getImsState(I)I
@@ -282,7 +287,7 @@
 .method public getModemMultiImsCount()I
     .locals 1
 
-    .line 181
+    .line 183
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/ImsService;->getModemMultiImsCount()I
@@ -296,7 +301,7 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 169
+    .line 171
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->onGetMtkUtInterface(I)Lcom/mediatek/ims/internal/IMtkImsUt;
@@ -311,7 +316,7 @@
     .param p1, "phoneId"    # I
     .param p2, "callId"    # Ljava/lang/String;
 
-    .line 164
+    .line 166
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1, p2}, Lcom/mediatek/ims/ImsService;->onGetPendingMtkCallSession(ILjava/lang/String;)Lcom/mediatek/ims/internal/IMtkImsCallSession;
@@ -325,7 +330,7 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 261
+    .line 266
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->getWfcRegErrorCode(I)I
@@ -339,19 +344,19 @@
     .locals 1
     .param p1, "phoneId"    # I
 
-    .line 127
+    .line 129
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ImsService;->onHangupAllCall(I)V
 
-    .line 128
+    .line 130
     return-void
 .end method
 
 .method public isCameraAvailable()Z
     .locals 1
 
-    .line 195
+    .line 197
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->isCameraAvailable()Z
 
     move-result v0
@@ -366,7 +371,7 @@
     .param p3, "mtklistener"    # Lcom/mediatek/ims/internal/IMtkImsRegistrationListener;
     .param p4, "notifyOnly"    # Z
 
-    .line 234
+    .line 239
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     const/4 v2, 0x1
@@ -381,7 +386,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/mediatek/ims/ImsService;->onAddRegistrationListener(IILcom/android/ims/internal/IImsRegistrationListener;Lcom/mediatek/ims/internal/IMtkImsRegistrationListener;Z)V
 
-    .line 236
+    .line 241
     return-void
 .end method
 
@@ -393,7 +398,7 @@
     .param p4, "netId"    # I
     .param p5, "phoneId"    # I
 
-    .line 175
+    .line 177
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     move-object v1, p1
@@ -414,7 +419,7 @@
 .end method
 
 .method public sendSms(IIILjava/lang/String;Ljava/lang/String;Z[B)V
-    .locals 8
+    .locals 12
     .param p1, "phoneId"    # I
     .param p2, "token"    # I
     .param p3, "messageRef"    # I
@@ -423,26 +428,37 @@
     .param p6, "isRetry"    # Z
     .param p7, "pdu"    # [B
 
-    .line 227
-    iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
+    .line 229
+    move-object v0, p0
 
-    move v1, p1
+    iget-object v1, v0, Lcom/mediatek/ims/MtkImsService;->mContext:Landroid/content/Context;
 
-    move v2, p2
+    const-string v2, "android.permission.SEND_SMS"
 
-    move v3, p3
+    const-string v3, "sendSms"
 
-    move-object v4, p4
+    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object v5, p5
+    .line 232
+    iget-object v4, v0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
-    move v6, p6
+    move v5, p1
 
-    move-object v7, p7
+    move v6, p2
 
-    invoke-virtual/range {v0 .. v7}, Lcom/mediatek/ims/ImsService;->sendSms(IIILjava/lang/String;Ljava/lang/String;Z[B)V
+    move v7, p3
 
-    .line 228
+    move-object/from16 v8, p4
+
+    move-object/from16 v9, p5
+
+    move/from16 v10, p6
+
+    move-object/from16 v11, p7
+
+    invoke-virtual/range {v4 .. v11}, Lcom/mediatek/ims/ImsService;->sendSms(IIILjava/lang/String;Ljava/lang/String;Z[B)V
+
+    .line 233
     return-void
 .end method
 
@@ -456,7 +472,7 @@
     .param p6, "isAllow"    # Z
     .param p7, "cause"    # I
 
-    .line 89
+    .line 91
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     move v1, p1
@@ -475,7 +491,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/mediatek/ims/ImsService;->onSetCallIndication(ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;ZI)V
 
-    .line 91
+    .line 93
     return-void
 .end method
 
@@ -488,7 +504,7 @@
     .param p5, "extraHeaders"    # Ljava/util/Map;
     .param p6, "location"    # [Ljava/lang/String;
 
-    .line 266
+    .line 271
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     move-object v5, p5
@@ -507,7 +523,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/mediatek/ims/ImsService;->setImsPreCallInfo(IILjava/lang/String;Ljava/lang/String;Ljava/util/HashMap;[Ljava/lang/String;)V
 
-    .line 268
+    .line 273
     return-void
 .end method
 
@@ -516,12 +532,12 @@
     .param p1, "phoneId"    # I
     .param p2, "enable"    # Z
 
-    .line 240
+    .line 245
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1, p2}, Lcom/mediatek/ims/ImsService;->setMTRedirect(IZ)V
 
-    .line 241
+    .line 246
     return-void
 .end method
 
@@ -531,7 +547,7 @@
     .param p2, "extraHeaders"    # Ljava/util/Map;
     .param p3, "fromUri"    # Ljava/lang/String;
 
-    .line 248
+    .line 253
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     move-object v1, p2
@@ -540,7 +556,7 @@
 
     invoke-virtual {v0, p1, v1, p3}, Lcom/mediatek/ims/ImsService;->setSipHeader(ILjava/util/HashMap;Ljava/lang/String;)V
 
-    .line 249
+    .line 254
     return-void
 .end method
 
@@ -549,12 +565,12 @@
     .param p1, "phoneId"    # I
     .param p2, "errorCode"    # I
 
-    .line 257
+    .line 262
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1, p2}, Lcom/mediatek/ims/ImsService;->setWfcRegErrorCode(II)V
 
-    .line 258
+    .line 263
     return-void
 .end method
 
@@ -563,11 +579,11 @@
     .param p1, "radioState"    # I
     .param p2, "phoneId"    # I
 
-    .line 145
+    .line 147
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsService;->mImsService:Lcom/mediatek/ims/ImsService;
 
     invoke-virtual {v0, p1, p2}, Lcom/mediatek/ims/ImsService;->updateRadioState(II)V
 
-    .line 146
+    .line 148
     return-void
 .end method

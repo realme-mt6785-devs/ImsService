@@ -5,7 +5,7 @@ Name: AndroidManifest.xml
 SHA-256-Digest: BxJwk1YqaFugGa8a+IBKCarlf6kD2MAQVTe/3m0ALhM=
 
 Name: classes.dex
-SHA-256-Digest: o51NwzK5kEPbyW8LuBfqQIk4JbmcOsMMyz0umKbfrR0=
+SHA-256-Digest: 39UbN2T68ilyM25oMEx460X4xZa3eowGJFZudgi/2ZI=
 
 Name: res/drawable-hdpi-v4/notification_bg_low_normal.9.png
 SHA-256-Digest: IfC1UoC+ELGHzv+O3vSlpwR2g+bp/PR95BCqODn0EJQ=
