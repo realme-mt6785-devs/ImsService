@@ -1,0 +1,23 @@
+version: 2.9.0
+apkFileName: ImsService.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+  tag: null
+sdkInfo:
+  minSdkVersion: 31
+  targetSdkVersion: 31
+packageInfo:
+  forcedPackageId: 127
+  renameManifestPackage: null
+versionInfo:
+  versionCode: 31
+  versionName: 12
+resourcesAreCompressed: false
+sharedLibrary: false
+sparseResources: false
+doNotCompress:
+- classes.dex
+- resources.arsc
+- png

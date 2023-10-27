@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="conf_digest_id" />
+    <string name="conf_digest_pwd">zte</string>
+</resources>
