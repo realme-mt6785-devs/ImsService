@@ -48,6 +48,13 @@
         <uses-library android:name="com.mediatek.ims.plugin" android:required="false"/>
         <uses-library android:name="com.mediatek.ims.legacy" android:required="false"/>
         <uses-library android:name="com.mediatek.wfo.legacy" android:required="false"/>
+        <uses-library android:name="mediatek-common" android:required="true"/>
+        <uses-library android:name="mediatek-framework" android:required="true"/>
+        <uses-library android:name="mediatek-ims-base" android:required="true"/>
+        <uses-library android:name="mediatek-ims-common" android:required="true"/>
+        <uses-library android:name="mediatek-telephony-common" android:required="true"/>
+        <uses-library android:name="mediatek-telecom-common" android:required="true"/>
+        <uses-library android:name="mediatek-telephony-base" android:required="true"/>
         <service android:name="com.mediatek.ims.MtkDynamicImsService" android:permission="android.permission.BIND_IMS_SERVICE">
             <meta-data android:name="android.telephony.ims.MMTEL_FEATURE" android:value="true"/>
             <meta-data android:name="android.telephony.ims.EMERGENCY_MMTEL_FEATURE" android:value="true"/>
