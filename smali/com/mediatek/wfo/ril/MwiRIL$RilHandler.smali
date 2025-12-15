@@ -176,25 +176,6 @@
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
     .line 408
-    iget-object v2, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
-
-    invoke-static {v2}, Lcom/mediatek/wfo/ril/MwiRIL;->access$300(Lcom/mediatek/wfo/ril/MwiRIL;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    move-result-object v2
-
-    iget-object v4, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
-
-    iget-object v4, v4, Lcom/mediatek/wfo/ril/MwiRIL;->mPhoneId:Ljava/lang/Integer;
-
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    iget v5, v1, Lcom/mediatek/wfo/ril/RILRequest;->mSerial:I
-
-    iget v6, v1, Lcom/mediatek/wfo/ril/RILRequest;->mRequest:I
-
-    invoke-virtual {v2, v4, v5, v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilTimeoutResponse(III)V
 
     .line 411
     .end local v3    # "timeoutResponse":Ljava/lang/Object;
