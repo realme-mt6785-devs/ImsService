@@ -84,7 +84,6 @@
 
 .field mLastNITZTimeInfo:[Ljava/lang/Object;
 
-.field private mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
 
 .field final mPhoneId:Ljava/lang/Integer;
 
@@ -191,11 +190,6 @@
     iput-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mTestingEmergencyCall:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 297
-    invoke-static {}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->getInstance()Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
 
     .line 307
     const/4 v1, 0x0
@@ -432,15 +426,6 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/mediatek/wfo/ril/MwiRIL;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-    .locals 1
-    .param p0, "x0"    # Lcom/mediatek/wfo/ril/MwiRIL;
-
-    .line 242
-    iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    return-object v0
-.end method
 
 .method static synthetic access$400(Lcom/mediatek/wfo/ril/MwiRIL;Lcom/mediatek/wfo/ril/RILRequest;)V
     .locals 0
@@ -3090,23 +3075,6 @@
 
     .line 1073
     :goto_0
-    iget-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mPhoneId:Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    iget v3, p1, Lcom/mediatek/wfo/ril/RILRequest;->mSerial:I
-
-    iget v4, p2, Landroid/hardware/radio/V1_0/RadioResponseInfo;->error:I
-
-    iget v5, p1, Lcom/mediatek/wfo/ril/RILRequest;->mRequest:I
-
-    move-object v6, p3
-
-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilSolicitedResponse(IIIILjava/lang/Object;)V
 
     .line 1075
     if-eqz p1, :cond_2
